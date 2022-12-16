@@ -8,10 +8,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var wanIPLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        WANIPGetter.getPublicIP { string in
+            self.wanIPLabel.text = string
+        }
+        
+        
+        
     }
 
 
